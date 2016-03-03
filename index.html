@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app= 'WeatherApp'>
+    <head>
+        <Title>  Weather Service </Title>
+    </head>
+    
+    <body>
+        <div ng-controller = "WeatherController as wc">
+            
+            <select ng-option = "city.name for cities in wc.cities"
+                    ng-change = "wc.getCurrentConditions()"
+                    ng-model = "wc.selected_cities"></select>
+      
+            <p> Selected City: {{wc.selected_cities.name}}</p>
+            <my-condition></my-condition> ///custom directive
+        </div>
+        
+   
+        
+        <script src = "angular.min.js" ></script>
+        <script src = "App.js"></script>
+    </body>
+</html>
